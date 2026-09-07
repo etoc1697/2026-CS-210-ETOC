@@ -48,7 +48,12 @@ int main() {
 		pair<int, int> answer1 = twoSumBruteForce(tests[i], targets[i]);
 		pair<int, int> answer2 = twoSumHash(tests[i], targets[i]);
 
-		cout << "\t Brutefore indecies: " << answer1.first << ", " << answer1.second << "\n \tHash indecies: " << answer2.first << ", " << answer2.second << "\n";
+		cout << "Target: " << targets[i] << endl;
+		cout << " Brute Values: " << tests[i][answer1.first] << " + " << tests[i][answer1.second];
+		cout << "\t Brutefore indecies: " << answer1.first << ", " << answer1.second << endl;
+		cout << " Hash Values: " << tests[i][answer2.first] << " + " << tests[i][answer2.second];
+		cout << "\tHash indecies : " << answer2.first << ", " << answer2.second << endl;
+
 	} 
 	
 
