@@ -8,9 +8,8 @@ int iterativeBinarySearch(const vector<int>& vect, int target) {
 
 	int top = vect.size();
 	int bottom = 0;
-	int mid = (top + bottom) / 2;
 		
-	while (!(top < bottom)) {
+	for (int mid = (top + bottom) / 2; top >= bottom; mid= (top + bottom) / 2) {
 		if (vect[mid] < target) {
 			bottom = mid + 1;
 		}
@@ -21,7 +20,6 @@ int iterativeBinarySearch(const vector<int>& vect, int target) {
 		{
 			return mid;
 		}
-		mid = (top + bottom) / 2;
 	};
 
 	return -1;
