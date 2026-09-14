@@ -5,28 +5,24 @@
 using namespace std;
 
 int iterativeBinarySearch(const vector<int>& vect, int target) {
-	for (int i = 0; i < vect.size(); i++) {
 
-		int top = vect.size();
-		int bottom = 0;
-		int mid = (top + bottom) / 2;
+	int top = vect.size();
+	int bottom = 0;
 		
-		while (!(top < bottom)) {
-			if (vect[mid] < target) {
-				bottom = mid + 1;
-			}
-			else if (vect[mid] > target) {
-				top = mid - 1;
-			}
-			else
-			{
-				return mid;
-			}
-			mid = (top + bottom) / 2;
-		};
+	for (int mid = (top + bottom) / 2; top >= bottom; mid= (top + bottom) / 2) {
+		if (vect[mid] < target) {
+			bottom = mid + 1;
+		}
+		else if (vect[mid] > target) {
+			top = mid - 1;
+		}
+		else
+		{
+			return mid;
+		}
+	};
 
-		return -1;
-	}
+	return -1;
 };
 
 int recursiveBinarySearch(const vector<int>& vect, int top, int bottom, int mid, int target) {
